@@ -21,7 +21,6 @@ namespace EasySaveClient.Service
         private PacketHandler()
         {
             obsList = new List<Observer>();
-
         }
 
         public  void Handle(byte[] packet, Socket clientSocket)

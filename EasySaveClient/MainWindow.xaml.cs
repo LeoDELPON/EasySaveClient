@@ -1,20 +1,12 @@
-﻿using EasySaveClient.Networking;
+﻿using EasySaveClient.DAL;
+using EasySaveClient.DTO;
+using EasySaveClient.Networking;
 using EasySaveClient.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static EasySaveClient.Networking.Work;
+
 
 namespace EasySaveClient
 {
@@ -24,7 +16,7 @@ namespace EasySaveClient
     public partial class MainWindow : Window, Observer
     {        
         private static ClientSocket _client;
-        public List<Work> workList;
+        public List<DTODataServer> workList;
         public List<WrkElement> workElements;
 
         
@@ -32,7 +24,7 @@ namespace EasySaveClient
 
         public MainWindow()
         {
-            workList = new List<Work>();
+            workList = new List<DTODataServer>();
             InitializeComponent();
             InitializeSocket();
 
@@ -61,7 +53,7 @@ namespace EasySaveClient
             throw new NotImplementedException();
         }
 
-        public void UpdateWorkList(Work work)
+        public void UpdateWorkList(DTODataServer work)
         {
             if (!workList.Any())
             {
@@ -71,7 +63,7 @@ namespace EasySaveClient
             {
                 for(int i = 0; i< workList.Count; i++)
                 {
-                    if (workList[i].workDict[WorkProperties.Name] == work.workDict[WorkProperties.Name])
+                    if (workList[i].Name == work.Name)
                     {
                         workList[i] = work;
                         PrintComponents();
@@ -101,7 +93,7 @@ namespace EasySaveClient
                 }
                 for(int j = 0; j< workElements.Count(); j++)
                 {
-                    if(workElements[i].Name == workList[i].workDict[WorkProperties.Name])
+                    if(workElements[i].Name == workList[i].Name)
                     {
                         workElements[i].UpdateWrkElement(workList[i]);
                         return;

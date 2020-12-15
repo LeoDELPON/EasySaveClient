@@ -1,4 +1,5 @@
-﻿using EasySaveClient.Networking;
+﻿using EasySaveClient.DTO;
+using EasySaveClient.Networking;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,9 +10,9 @@ namespace EasySaveClient
     public partial class WrkElement : UserControl
     {
       
-        private Work work;
+        private DTODataServer work;
 
-        public WrkElement(Work work)
+        public WrkElement(DTODataServer work)
         {
             this.work = work;
             InitializeComponent();
@@ -22,13 +23,13 @@ namespace EasySaveClient
         
 
 
-        public void UpdateWrkElement(Work workItem)
+        public void UpdateWrkElement(DTODataServer workItem)
         {
-            workNameLbl.Content = workItem.workDict[Work.WorkProperties.Name];
-            workSourceLbl.Content = workItem.workDict[Work.WorkProperties.Name];
-            workTargetLbl.Content = workItem.workDict[Work.WorkProperties.Name];
-            workTypeLbl.Content = workItem.workDict[Work.WorkProperties.Name];
-            workProgressBar.Value =(double) workItem.workDict[Work.WorkProperties.Progress];
+            workNameLbl.Content = workItem.Name;
+            workSourceLbl.Content = workItem.Name;
+            workTargetLbl.Content = workItem.Name;
+            workTypeLbl.Content = workItem.Name;
+            workProgressBar.Value = workItem.Progress;
         }
     }
 }

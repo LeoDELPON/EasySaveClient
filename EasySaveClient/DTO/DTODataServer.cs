@@ -15,7 +15,7 @@ namespace EasySaveClient.DTO
         public string EncryptDuration { get; set; }
         public string State { get; set; }
         public string EligibleFiles { get; set; }
-        public string Progress { get; set; }
+        public double Progress { get; set; }
         public string RemaningFiles { get; set; }
         public string RemainingSize { get; set; }
     }
