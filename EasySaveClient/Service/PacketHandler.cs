@@ -36,6 +36,7 @@ namespace EasySaveClient.Service
         {
             try
             {
+     
                 foreach (Observer obs in obsList)
                 {
                     obs.UpdateWorkList(work);
