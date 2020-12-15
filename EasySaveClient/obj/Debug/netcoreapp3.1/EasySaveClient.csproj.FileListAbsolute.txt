@@ -1,0 +1,6 @@
+C:\Users\Kylian\source\repos\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\EasySaveClient.csprojAssemblyReference.cache
+C:\Users\Kylian\source\repos\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Kylian\source\repos\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\WrkElement.g.cs
+C:\Users\Kylian\source\repos\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Kylian\source\repos\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\EasySaveClient_MarkupCompile.cache
+C:\Users\Kylian\source\repos\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\EasySaveClient_MarkupCompile.lref

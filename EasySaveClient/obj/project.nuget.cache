@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "pOCfWjz9J85d7J0RgvhKI4kMPKV3fezohPU57aPtFwOM33lsJl096P347FLImtaN2jr1mysiubYyUMV/kOe9EA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\delpo\\Documents\\Projets\\C#\\EasySaveClient\\EasySaveClient\\EasySaveClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\delpo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
