@@ -29,7 +29,7 @@ namespace EasySaveClient
             workSourceLbl.Content = workItem.Name;
             workTargetLbl.Content = workItem.Name;
             workTypeLbl.Content = workItem.Name;
-            workProgressBar.Value = workItem.Progress;
+            workProgressBar.Value = Int16.Parse(workItem.Progress);
         }
     }
 }
