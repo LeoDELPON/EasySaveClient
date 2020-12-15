@@ -18,7 +18,8 @@
             Cesi EasySave client
         </TextBlock>
         <Button x:Name="ConnectToServer" Grid.Row="2" Margin="10" Padding="10" Click="ConnectToServer_Click">Se connecter</Button>
-        <Button x:Name="ExecuteWork" Grid.Row="3" Margin="10" Padding="10" Click="ExecuteWork_Click">Exécuter un travail</Button>
-        <TextBlock x:Name="resultsWindow" Grid.Row="4" Margin="10"/>
+        <Button x:Name="ExecuteWork" Grid.Row="3" Margin="10" Padding="10" >Exécuter un travail</Button>
+        <ListBox Name="WorkList" Grid.Row="4"/>
+
     </Grid>
 </Window>

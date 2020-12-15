@@ -29,7 +29,7 @@ namespace EasySaveClient
         private void InitializeSocket()
         {
             _client = new ClientSocket();
-            _client.Connect("192.168.137.1", 9999);
+            _client.Connect("192.168.43.138", 9999);
             
         }
 
@@ -91,7 +91,7 @@ namespace EasySaveClient
                     }
                 }
                 workElements.Add(new WrkElement(workList[i]));
-                CurrentWorksListBox.Items.Add(workElements.LastOrDefault());
+                WorkList.Items.Add(workElements.LastOrDefault());
 
             }
 
