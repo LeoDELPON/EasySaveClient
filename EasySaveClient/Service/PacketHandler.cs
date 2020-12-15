@@ -51,12 +51,12 @@ namespace EasySaveClient.Service
 
         public void Subscribe(Observer obs)
         {
-            
+            obsList.Add(obs);
         }
 
         public void Unsuscribe(Observer obs)
         {
-            
+            obsList.Remove(obs);
         }
 
         private Dictionary<WorkProperties, object> UpdateWorkProperties(JObject json)

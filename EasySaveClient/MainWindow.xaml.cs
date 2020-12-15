@@ -19,20 +19,11 @@ namespace EasySaveClient
         public List<DTODataServer> workList;
         public List<WrkElement> workElements;
 
-        
-
-
         public MainWindow()
         {
             workList = new List<DTODataServer>();
             InitializeComponent();
             InitializeSocket();
-
-            
-
-
-            
-
         }
 
         private void InitializeSocket()
