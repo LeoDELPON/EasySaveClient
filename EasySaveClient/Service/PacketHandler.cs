@@ -51,11 +51,13 @@ namespace EasySaveClient.Service
 
         public void Subscribe(Observer obs)
         {
+          
             
         }
 
         public void Unsuscribe(Observer obs)
         {
+
             
         }
 
