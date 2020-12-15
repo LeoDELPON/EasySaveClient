@@ -113,5 +113,10 @@ namespace EasySaveClient
             }
 
         }
+
+        private void ConnectToServer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
