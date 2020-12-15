@@ -18,9 +18,12 @@ namespace EasySaveClient
         private static ClientSocket _client;
         public List<DTODataServer> workList;
         public List<WrkElement> workElements;
+        public PacketHandler _handler;
 
         public MainWindow()
         {
+            _handler = PacketHandler.Instance;
+            _handler.Subscribe(this);
             workList = new List<DTODataServer>();
             InitializeComponent();
             InitializeSocket();
@@ -29,14 +32,13 @@ namespace EasySaveClient
         private void InitializeSocket()
         {
             _client = new ClientSocket();
-            _client.Connect("192.168.137.1", 9999);
+            _client.Connect("192.168.226.1", 9999);
             
         }
 
         public void GetCurrentWorks()
         {
 
-           
         }
 
         public void UpdateWorkList()
