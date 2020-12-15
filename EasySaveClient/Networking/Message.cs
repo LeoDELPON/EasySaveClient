@@ -7,7 +7,7 @@ namespace EasySaveClient.Networking
 {
     public class Message : PacketStructure
     {
-        public Message(string message) : base((ushort)(4 + message.Length), 2000)
+        public Message(string message) : base((ushort)(message.Length))
         {
             Text = message;
             
@@ -21,7 +21,7 @@ namespace EasySaveClient.Networking
         public string Text
         {
             get { return ReadString(0, finalBuffer.Length); }
-            set { WriteString(value, 4); }
+            set { WriteString(value, 0); }
         }
     }
 }
