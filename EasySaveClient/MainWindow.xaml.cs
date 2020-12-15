@@ -81,12 +81,13 @@ namespace EasySaveClient
                     workElements[i] = new WrkElement(workList[i]);
                     return;
 
+
                 }
                 for(int j = 0; j< workElements.Count(); j++)
                 {
-                    if(workElements[i].Name == workList[i].Name)
+                    if(workElements[j].Name == workList[i].Name)
                     {
-                        workElements[i].UpdateWrkElement(workList[i]);
+                        workElements[j].UpdateWrkElement(workList[i]);
                         return;
                     }
                 }
