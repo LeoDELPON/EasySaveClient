@@ -20,7 +20,7 @@ namespace EasySaveClient.Factory
             dataServer.EncryptDuration = propertiesServer[WorkProperties.EncryptDuration].ToString();
             dataServer.State = propertiesServer[WorkProperties.State].ToString();
             dataServer.EligibleFiles = propertiesServer[WorkProperties.EligibleFiles].ToString();
-            dataServer.Progress = propertiesServer[WorkProperties.Progress].ToString();
+            dataServer.Progress = (double)propertiesServer[WorkProperties.Progress];
             dataServer.RemainingSize = propertiesServer[WorkProperties.RemainingSize].ToString();
             return dataServer;
         }
