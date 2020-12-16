@@ -10,7 +10,7 @@ namespace EasySaveClient
     public partial class WrkElement : UserControl
     {
       
-        private DTODataServer work;
+        public DTODataServer work;
 
         public WrkElement(DTODataServer work)
         {
@@ -26,10 +26,17 @@ namespace EasySaveClient
         public void UpdateWrkElement(DTODataServer workItem)
         {
             workNameLbl.Content = workItem.Name;
-            workSourceLbl.Content = workItem.Name;
-            workTargetLbl.Content = workItem.Name;
-            workTypeLbl.Content = workItem.Name;
+            
+            
             workProgressBar.Value = Int16.Parse(workItem.Progress);
+            workDuration.Content = workItem.Duration;
+            workEligibleSize.Content = workItem.EligibleFiles;
+            workEncryptDuration.Content = workItem.EncryptDuration;
+            workRemainingSize.Content = workItem.RemainingSize;
+            workSize.Content = workItem.Size;
+            workTypeLbl.Content = workItem.TypeSave:
+
+
         }
     }
 }

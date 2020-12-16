@@ -17,9 +17,15 @@
         <TextBlock Grid.Row="1" Margin="10 0" FontSize="28">
             Cesi EasySave client
         </TextBlock>
-        <Button x:Name="ConnectToServer" Grid.Row="2" Margin="10" Padding="10" Click="ConnectToServer_Click">Se connecter</Button>
-        <Button x:Name="ExecuteWork" Grid.Row="3" Margin="10" Padding="10" >Exécuter un travail</Button>
-        <ListBox Name="WorkList" Grid.Row="4"/>
+        
+        <ListBox Name="WorkList" Grid.Row="4" Margin="0,24,0,0"/>
+        <StackPanel Orientation="Horizontal" Background="White"    >
+
+            <Button Content="Abort" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="40" Width="70" RenderTransformOrigin="-0.603,0.462" Grid.Row="2" Grid.Column="2" IsEnabled="false" Name="abortBtn" Click="AbortBtn_Click"/>
+            <Button Content="Pause" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="40" Width="70" Grid.Row="2" Grid.Column="2" Name="pauseBtn" Click="PauseBtn_Click" IsEnabled="false"/>
+            <Button Content="Resume" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" RenderTransformOrigin="0.53,-2.998"  Width="70" Height="40" Name="resumeBtn" Click="ResumeBtn_Click" IsEnabled="false"/>
+        </StackPanel>
+
 
     </Grid>
 </Window>

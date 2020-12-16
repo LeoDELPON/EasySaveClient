@@ -25,14 +25,16 @@ namespace EasySaveClient
             _handler = PacketHandler.Instance;
             _handler.Subscribe(this);
             workList = new List<DTODataServer>();
+            workElements = new List<WrkElement>();
             InitializeComponent();
+            WorkList.Items.Add(new MainElement());
             InitializeSocket();
         }
 
         private void InitializeSocket()
         {
             _client = new ClientSocket();
-            _client.Connect("192.168.226.1", 9999);
+            _client.Connect("192.168.1.25", 9999);
         }
 
         public void GetCurrentWorks()
@@ -61,6 +63,7 @@ namespace EasySaveClient
                         PrintComponents();
                         return;
                     }
+
                 }
                 workList.Add(work);
             }
@@ -78,14 +81,15 @@ namespace EasySaveClient
             {
                 if (!workElements.Any())
                 {
-                    workElements[i] = new WrkElement(workList[i]);
+                    workElements.Add( new WrkElement(workList[i]));
+                    WorkList.Items.Add(workElements.LastOrDefault());
                     return;
 
 
                 }
                 for(int j = 0; j< workElements.Count(); j++)
                 {
-                    if(workElements[j].Name == workList[i].Name)
+                    if(workElements[j].work.Name == workList[i].Name)
                     {
                         workElements[j].UpdateWrkElement(workList[i]);
                         return;
@@ -98,7 +102,15 @@ namespace EasySaveClient
 
         }
 
-        private void ConnectToServer_Click(object sender, RoutedEventArgs e)
+        private void AbortBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void PauseBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void ResumeBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

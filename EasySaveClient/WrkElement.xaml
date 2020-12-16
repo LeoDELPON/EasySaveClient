@@ -4,24 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EasySaveClient"
-             mc:Ignorable="d" Width="386" 
+             mc:Ignorable="d"  
              >
     <StackPanel>
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="386" >
-        <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="checkBox"/>
-        <StackPanel Orientation="Horizontal" Background="CadetBlue" Margin="0" Width="331"  >
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  >
+            <StackPanel Orientation="Horizontal" Background="CadetBlue" Margin="0"   >
 
             <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workNameLbl" Width="62" FontFamily="Segoe UI Semilight" Foreground="White"/>
-            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workSourceLbl" Width="110" FontFamily="Segoe UI Semilight" Foreground="White"/>
-            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workTargetLbl" Width="93" FontFamily="Segoe UI Semilight" Foreground="White"/>
-            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workTypeLbl" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+           
+            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name ="workTypeLbl" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workDate" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workDuration" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEncryptDuration" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEligibleSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+            <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workRemainingSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+            </StackPanel>
+
+
+
         </StackPanel>
-
-        <Button Content="->" VerticalAlignment="Center" Background="Green" Width="23" Margin=" 10px" Name ="ToWorkList" Foreground="White" BorderThickness="0"/>
-       
-
-
-    </StackPanel>
-        <ProgressBar Height="7" Name="workProgressBar" BorderThickness="0"/>
+        <ProgressBar Height="7" Name="workProgressBar" BorderThickness="0" />
     </StackPanel>
 </UserControl>
