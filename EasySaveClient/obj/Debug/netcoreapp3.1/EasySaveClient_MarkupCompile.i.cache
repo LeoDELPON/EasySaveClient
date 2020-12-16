@@ -1,19 +1,19 @@
 ﻿EasySaveClient
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\delpo\Documents\Projets\C#\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\
+C:\Users\Kylian\source\repos\ESCLEO\EasySaveClient\obj\Debug\netcoreapp3.1\
 EasySaveClient
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\delpo\Documents\Projets\C#\EasySaveClient\EasySaveClient\App.xaml
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+C:\Users\Kylian\source\repos\ESCLEO\EasySaveClient\App.xaml
 31926261249
 
-15-1696109755
-193663078252
+14822521019
+193-1055240781
 MainElement.xaml;MainWindow.xaml;WrkElement.xaml;
 
 False

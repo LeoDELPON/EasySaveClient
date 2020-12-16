@@ -14,16 +14,23 @@ namespace EasySaveClient
 
         public WrkElement(DTODataServer work)
         {
-            this.work = work;
-            InitializeComponent();
+            this.work = work;           
 
-            UpdateWrkElement(work);
+            InitializeComponent();
+            workNameLbl.Content = work.Name;
+            workProgressBar.Value = Int16.Parse(work.Progress);
+            workDuration.Content = work.Duration;
+            workEligibleSize.Content = work.EligibleFiles;
+            workEncryptDuration.Content = work.EncryptDuration;
+            workRemainingSize.Content = work.RemainingSize;
+            workSize.Content = work.Size;
+            workTypeLbl.Content = work.TypeSave;
         }
 
         public void UpdateWrkElement(DTODataServer workItem)
         {
-            workNameLbl.Content = workItem.Name;
-            
+            this.work = workItem;
+            workNameLbl.Content = workItem.Name;           
             
             workProgressBar.Value = Int16.Parse(workItem.Progress);
             workDuration.Content = workItem.Duration;

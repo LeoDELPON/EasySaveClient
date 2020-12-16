@@ -34,7 +34,7 @@ namespace EasySaveClient
         private void InitializeSocket()
         {
             _client = new ClientSocket();
-            _client.Connect("192.168.226.1", 9999);
+            _client.Connect("192.168.1.25", 9999);
         }
 
         public void GetCurrentWorks()
@@ -52,6 +52,8 @@ namespace EasySaveClient
             if (!workList.Any())
             {
                 workList.Add(work);
+                PrintComponents();
+                return;
             }
             else
             {
@@ -66,24 +68,27 @@ namespace EasySaveClient
 
                 }
                 workList.Add(work);
+                PrintComponents();
+                return;
             }
-            PrintComponents();
+            
         }
         public void PrintComponents()
         {
             int worksNumber = workList.Count;
             
-            if (!workList.Any())
-            {
-                return;
-            }
+          
             for (int i = 0; i < workList.Count; i++)
             {
                 if (!workElements.Any())
                 {
+                    workElements.Add(new WrkElement(workList[i]));
                     Dispatcher.Invoke(() => {
-                        workElements.Add(new WrkElement(workList[i]));
-                        WorkList.Items.Add(workElements.LastOrDefault());
+                        
+
+                        WorkList.Items.Add(workElements[0]);
+                        workElements[0].UpdateWrkElement(workList[i]);
+
                     });
                     return;
                 }
@@ -102,7 +107,8 @@ namespace EasySaveClient
                     }
                 }
                 workElements.Add(new WrkElement(workList[i]));
-                WorkList.Items.Add(workElements.LastOrDefault());
+                WorkList.Items.Add(workElements[workElements.Count - 1]);
+                workElements[workElements.Count - 1].UpdateWrkElement(workList[i]);
 
             }
 
