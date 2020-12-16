@@ -15,10 +15,10 @@
                 <Label Content="Type" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name ="workTypeLbl" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
                 <Label Content="Date" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workDate" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
                 <Label Content="Size" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
-                <Label Content="Temps" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workDuration" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
-                <Label Content="EnryptDuration" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEncryptDuration" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
-                <Label Content="EligibleFile" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEligibleSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
-                <Label Content="RemainingSize" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workRemainingSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+                <Label Content="Temps" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workDuration"  FontFamily="Segoe UI Semilight" Foreground="White"/>
+                <Label Content="EnryptDuration" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEncryptDuration"  FontFamily="Segoe UI Semilight" Foreground="White"/>
+                <Label Content="EligibleFile" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEligibleSize"  FontFamily="Segoe UI Semilight" Foreground="White"/>
+                <Label Content="RemainingSize" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workRemainingSize"  FontFamily="Segoe UI Semilight" Foreground="White"/>
             </StackPanel>
 
 
