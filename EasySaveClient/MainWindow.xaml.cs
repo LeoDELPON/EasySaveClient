@@ -5,6 +5,7 @@ using EasySaveClient.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Windows;
 
 
@@ -49,6 +50,20 @@ namespace EasySaveClient
 
         public void UpdateWorkList(DTODataServer work)
         {
+            if (workList.Count > 0)
+            {
+                Dispatcher.Invoke(() => {
+                    abortBtn.IsEnabled = true;
+                });
+                Dispatcher.Invoke(() =>
+                {
+                    pauseBtn.IsEnabled = true;
+                });
+                Dispatcher.Invoke(() =>
+                {
+                    resumeBtn.IsEnabled = true;
+                });
+            }
             if (!workList.Any())
             {
                 workList.Add(work);
@@ -110,15 +125,37 @@ namespace EasySaveClient
 
         private void AbortBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                Message msg = new Message("STOP");
+                _client.Send(msg.finalBuffer);
+            } catch(Exception exception)
+            {
+                Console.WriteLine("[-] An error has occured {0}", exception);
+            }
         }
         private void PauseBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                Message msg = new Message("PAUSE");
+                _client.Send(msg.finalBuffer);
+            } catch(Exception exception)
+            {
+                Console.WriteLine("[-] An error has occured {0}", exception);
+            }
         }
         private void ResumeBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                Message msg = new Message("START");
+                _client.Send(msg.finalBuffer);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("[-] An error has occured {0}", exception);
+            }
         }
     }
 }
