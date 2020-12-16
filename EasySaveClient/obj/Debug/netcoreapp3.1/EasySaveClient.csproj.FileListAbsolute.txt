@@ -70,3 +70,4 @@ C:\Users\Kylian\source\repos\ESCLEO\EasySaveClient\obj\Debug\netcoreapp3.1\EasyS
 C:\Users\Kylian\source\repos\ESCLEO\EasySaveClient\obj\Debug\netcoreapp3.1\EasySaveClient.AssemblyInfoInputs.cache
 C:\Users\Kylian\source\repos\ESCLEO\EasySaveClient\obj\Debug\netcoreapp3.1\EasySaveClient.AssemblyInfo.cs
 C:\Users\Kylian\source\repos\ESCLEO\EasySaveClient\obj\Debug\netcoreapp3.1\EasySaveClient.csproj.CopyComplete
+C:\Users\delpo\Documents\Projets\C#\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\EasySaveClient.csprojAssemblyReference.cache
