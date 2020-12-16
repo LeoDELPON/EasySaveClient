@@ -117,7 +117,7 @@ namespace EasySaveClient {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EasySaveClient;component/mainelement.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EasySaveClient_hsgtdpqk_wpftmp;component/mainelement.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MainElement.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

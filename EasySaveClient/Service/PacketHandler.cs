@@ -47,6 +47,7 @@ namespace EasySaveClient.Service
                 foreach (Observer obs in obsList)
                 {
                     obs.UpdateWorkList(work);
+                    
                 }
             }
             catch (Exception e)

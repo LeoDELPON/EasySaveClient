@@ -10,35 +10,29 @@ namespace EasySaveClient
     public partial class WrkElement : UserControl
     {
       
-        public DTODataServer work;
+        public DTODataServer Work;
 
         public WrkElement(DTODataServer work)
         {
-            this.work = work;           
+            this.Work = work;      
 
             InitializeComponent();
-            workNameLbl.Content = work.Name;
-            workProgressBar.Value = Int16.Parse(work.Progress);
-            workDuration.Content = work.Duration;
-            workEligibleSize.Content = work.EligibleFiles;
-            workEncryptDuration.Content = work.EncryptDuration;
-            workRemainingSize.Content = work.RemainingSize;
-            workSize.Content = work.Size;
-            workTypeLbl.Content = work.TypeSave;
+            UpdateWrkElement(this.Work);
         }
 
         public void UpdateWrkElement(DTODataServer workItem)
         {
-            this.work = workItem;
-            workNameLbl.Content = workItem.Name;           
+            this.Work = workItem;
+
+            workNameLbl.Content = workItem.Name;         
             
             workProgressBar.Value = Int16.Parse(workItem.Progress);
-            workDuration.Content = workItem.Duration;
-            workEligibleSize.Content = workItem.EligibleFiles;
-            workEncryptDuration.Content = workItem.EncryptDuration;
-            workRemainingSize.Content = workItem.RemainingSize;
-            workSize.Content = workItem.Size;
-            workTypeLbl.Content = workItem.TypeSave;
+            workDuration.Content = workItem.Duration.ToString();
+            workEligibleSize.Content = workItem.EligibleFiles.ToString();
+            workEncryptDuration.Content = workItem.EncryptDuration.ToString();
+            workRemainingSize.Content = workItem.RemainingSize.ToString();
+            workSize.Content = workItem.Size.ToString();
+            //workTypeLbl.Content = workItem.TypeSave.ToString();
 
 
         }

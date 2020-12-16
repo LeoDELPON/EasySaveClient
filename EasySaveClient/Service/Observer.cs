@@ -9,5 +9,6 @@ namespace EasySaveClient.Service
     public interface Observer
     {
         public void UpdateWorkList(DTODataServer work);
+        public void PrintComponents();
     }
 }
