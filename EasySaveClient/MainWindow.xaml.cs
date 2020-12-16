@@ -23,6 +23,7 @@ namespace EasySaveClient
         public MainWindow()
         {
             _handler = PacketHandler.Instance;
+            workElements = new List<WrkElement>();
             _handler.Subscribe(this);
             workList = new List<DTODataServer>();
             InitializeComponent();
@@ -78,17 +79,24 @@ namespace EasySaveClient
             {
                 if (!workElements.Any())
                 {
-                    workElements[i] = new WrkElement(workList[i]);
+                    Dispatcher.Invoke(() => {
+                        workElements.Add(new WrkElement(workList[i]));
+                        WorkList.Items.Add(workElements.LastOrDefault());
+                    });
                     return;
-
-
                 }
                 for(int j = 0; j< workElements.Count(); j++)
                 {
-                    if(workElements[j].Name == workList[i].Name)
+                    if(workElements[j].work.Name == workList[i].Name)
                     {
-                        workElements[j].UpdateWrkElement(workList[i]);
+                        Dispatcher.Invoke(() =>
+                        {
+                            workElements[j].UpdateWrkElement(workList[i]);
+                        });
                         return;
+                    } else
+                    {
+                        Console.WriteLine("[-] Couldn't update the element...");
                     }
                 }
                 workElements.Add(new WrkElement(workList[i]));

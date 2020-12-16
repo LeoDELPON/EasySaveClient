@@ -18,6 +18,7 @@ namespace EasySaveClient.Factory
             dataServer.EligibleFiles = propertiesServer[WorkProperties.EligibleFiles].ToString();
             dataServer.Progress = propertiesServer[WorkProperties.Progress].ToString();
             dataServer.RemainingSize = propertiesServer[WorkProperties.RemainingSize].ToString();
+            dataServer.SaveType = propertiesServer[WorkProperties.TypeSave].ToString();
             return dataServer;
         }
     }

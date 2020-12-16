@@ -16,5 +16,6 @@ namespace EasySaveClient.DTO
         public string Progress { get; set; }
         public string RemaningFiles { get; set; }
         public string RemainingSize { get; set; }
+        public string SaveType { get; set; }
     }
 }
