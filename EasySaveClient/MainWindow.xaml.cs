@@ -32,7 +32,7 @@ namespace EasySaveClient
         private void InitializeSocket()
         {
             _client = new ClientSocket();
-            _client.Connect("192.168.226.1", 9999);
+            _client.Connect("192.168.43.138", 9999);
             
         }
 
