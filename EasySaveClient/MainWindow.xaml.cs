@@ -35,7 +35,7 @@ namespace EasySaveClient
         private void InitializeSocket()
         {
             _client = new ClientSocket();
-            _client.Connect("192.168.226.1", 9999);
+            _client.Connect("192.168.1.25", 9999);
         }
 
         public void GetCurrentWorks()
@@ -67,6 +67,14 @@ namespace EasySaveClient
             if (!workList.Any())
             {
                 workList.Add(work);
+               
+
+                Dispatcher.Invoke(() => {
+                    workElements.Add(new WrkElement(work));
+                    WorkList.Items.Add(workElements[workElements.Count - 1]);
+                workElements[workElements.Count - 1].UpdateWrkElement(work);
+                });
+                return;
             }
             else
             {
@@ -75,51 +83,31 @@ namespace EasySaveClient
                     if (workList[i].Name == work.Name)
                     {
                         workList[i] = work;
-                        PrintComponents();
+
+                            Dispatcher.Invoke(() => {
+                                workElements[i].UpdateWrkElement(work);
+                            });
                         return;
                     }
 
                 }
+
                 workList.Add(work);
-            }
-            PrintComponents();
-        }
-        public void PrintComponents()
-        {
-            int worksNumber = workList.Count;
-            
-            if (!workList.Any())
-            {
+                
+                        Dispatcher.Invoke(() => {
+                            workElements.Add(new WrkElement(work));
+                            WorkList.Items.Add(workElements[workElements.Count -1]);
+                workElements[workElements.Count - 1].UpdateWrkElement(work);
+                        });
                 return;
             }
-            for (int i = 0; i < workList.Count; i++)
-            {
-                if (!workElements.Any())
-                {
-                    Dispatcher.Invoke(() => {
-                        workElements.Add(new WrkElement(workList[i]));
-                        WorkList.Items.Add(workElements.LastOrDefault());
-                    });
-                    return;
-                }
-                for(int j = 0; j< workElements.Count(); j++)
-                {
-                    if(workElements[j].work.Name == workList[i].Name)
-                    {
-                        Dispatcher.Invoke(() =>
-                        {
-                            workElements[j].UpdateWrkElement(workList[i]);
-                        });
-                        return;
-                    } else
-                    {
-                        Console.WriteLine("[-] Couldn't update the element...");
-                    }
-                }
-                workElements.Add(new WrkElement(workList[i]));
-                WorkList.Items.Add(workElements.LastOrDefault());
-
-            }
+            
+        }
+        public void PrintComponents(DTODataServer work)
+        {           
+            
+          
+            
 
         }
 
@@ -156,6 +144,11 @@ namespace EasySaveClient
             {
                 Console.WriteLine("[-] An error has occured {0}", exception);
             }
+        }
+
+        public void PrintComponents()
+        {
+            throw new NotImplementedException();
         }
     }
 }
