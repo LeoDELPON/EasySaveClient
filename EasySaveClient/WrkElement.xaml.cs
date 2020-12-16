@@ -25,7 +25,7 @@ namespace EasySaveClient
             workNameLbl.Content = workItem.Name;
             workSize.Content = workItem.Size;
             workEligibleFiles.Content = workItem.EligibleFiles;
-            workTypeLbl.Content = workItem.SaveType;
+            workTypeLbl.Content = workItem.TypeSave;
             workProgressBar.Value = Int16.Parse(workItem.Progress);
         }
     }

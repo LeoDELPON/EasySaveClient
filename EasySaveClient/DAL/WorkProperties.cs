@@ -14,7 +14,6 @@ namespace EasySaveClient.DAL
         Duration,
         CurrentFile,
         EligibleFiles,
-        RemainingFiles,
         Size,
         RemainingSize,
         Extensions,

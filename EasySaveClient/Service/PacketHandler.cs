@@ -1,6 +1,5 @@
 ﻿using EasySaveClient.DAL;
 using EasySaveClient.DTO;
-using EasySaveClient.Factory;
 using EasySaveClient.Networking;
 using Newtonsoft.Json.Linq;
 using System;
@@ -31,9 +30,6 @@ namespace EasySaveClient.Service
             {
                 Message msg = new Message(packet);
                 DTODataServer dataServer = JsonSerializer.Deserialize<DTODataServer>(msg.Text);
-                //JObject json = JObject.Parse(msg.Text);
-                //_work = UpdateWorkProperties(json);
-                //DTODataServer dataServer = new DataServerFactory().CreateDtoDataServer(_work);
                 NotifyObserver(dataServer);
             } catch(Exception e)
             {
@@ -68,25 +64,6 @@ namespace EasySaveClient.Service
         public void Unsuscribe(Observer obs)
         {
             obsList.Remove(obs);
-        }
-
-        private Dictionary<WorkProperties, object> UpdateWorkProperties(JObject json)
-        {
-            Dictionary<WorkProperties, object> work = new Dictionary<WorkProperties, object>();
-            work[WorkProperties.Name] = json["Name"];
-            work[WorkProperties.TypeSave] = json["TypeSave"];
-            work[WorkProperties.Date] = json["Date"];
-            work[WorkProperties.State] = json["State"];
-            work[WorkProperties.Progress] = json["Progress"];
-            work[WorkProperties.Duration] = json["Duration"];
-            work[WorkProperties.CurrentFile] = json["CurrentFile"];
-            work[WorkProperties.EligibleFiles] = json["EligibleFiles"];
-            work[WorkProperties.RemainingFiles] = json["RemainingFiles"];
-            work[WorkProperties.Size] = json["Size"];
-            work[WorkProperties.RemainingSize] = json["RemainingSize"];
-            work[WorkProperties.Extensions] = json["Extensions"];
-            work[WorkProperties.EncryptDuration] = json["EncryptDuration"];
-            return work;
         }
     }
 }
