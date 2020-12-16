@@ -22,6 +22,7 @@ namespace EasySaveClient.Service
         private PacketHandler()
         {
             obsList = new List<Observer>();
+            //KIKI EST UNE ENORME TARLOUZZE
         }
 
         public  void Handle(byte[] packet, Socket clientSocket)
