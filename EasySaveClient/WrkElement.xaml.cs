@@ -20,9 +20,6 @@ namespace EasySaveClient
             UpdateWrkElement(work);
         }
 
-        
-
-
         public void UpdateWrkElement(DTODataServer workItem)
         {
             workNameLbl.Content = workItem.Name;

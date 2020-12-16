@@ -1,5 +1,5 @@
 ﻿EasySaveClient
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\delpo\Documents\Projets\C#\EasySaveClient\EasySaveClient\App.xaml
 2-483001951
 
-142143037861
+12-1414239218
 193663078252
 MainWindow.xaml;WrkElement.xaml;
 
