@@ -6,7 +6,8 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Sockets;
-using System.Text;
+using System.Text.Json;
+using System.Threading;
 
 namespace EasySaveClient.Service
 {
@@ -17,7 +18,7 @@ namespace EasySaveClient.Service
         public List<Observer> obsList { get; set; }
         private static readonly Lazy<PacketHandler> lazy = new Lazy<PacketHandler>(() => new PacketHandler());
         public static PacketHandler Instance { get { return lazy.Value; } }
-
+        private readonly object tLock = new object();
         private PacketHandler()
         {
             obsList = new List<Observer>();
@@ -25,18 +26,28 @@ namespace EasySaveClient.Service
 
         public  void Handle(byte[] packet, Socket clientSocket)
         {
-            Message msg = new Message(packet);
-            JObject json = JObject.Parse(msg.Text);
-            _work = UpdateWorkProperties(json);
-            DTODataServer dataServer = new DataServerFactory().CreateDtoDataServer(_work);
-            NotifyObserver(dataServer);
+            Monitor.Enter(tLock);
+            try
+            {
+                Message msg = new Message(packet);
+                DTODataServer dataServer = JsonSerializer.Deserialize<DTODataServer>(msg.Text);
+                //JObject json = JObject.Parse(msg.Text);
+                //_work = UpdateWorkProperties(json);
+                //DTODataServer dataServer = new DataServerFactory().CreateDtoDataServer(_work);
+                NotifyObserver(dataServer);
+            } catch(Exception e)
+            {
+                Console.WriteLine("[-] {0}", e);
+            } finally
+            {
+                Monitor.Exit(tLock);
+            }
         }
 
         public void NotifyObserver(DTODataServer work)
         {
             try
             {
-     
                 foreach (Observer obs in obsList)
                 {
                     obs.UpdateWorkList(work);
@@ -63,9 +74,7 @@ namespace EasySaveClient.Service
         {
             Dictionary<WorkProperties, object> work = new Dictionary<WorkProperties, object>();
             work[WorkProperties.Name] = json["Name"];
-            work[WorkProperties.Source] = json["Source"];
             work[WorkProperties.TypeSave] = json["TypeSave"];
-            work[WorkProperties.Target] = json["Target"];
             work[WorkProperties.Date] = json["Date"];
             work[WorkProperties.State] = json["State"];
             work[WorkProperties.Progress] = json["Progress"];

@@ -7,9 +7,7 @@ namespace EasySaveClient.DAL
     public enum WorkProperties
     {
         Name,
-        Source,
         TypeSave,
-        Target,
         Date,
         State,
         Progress,

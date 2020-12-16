@@ -33,7 +33,6 @@ namespace EasySaveClient
         {
             _client = new ClientSocket();
             _client.Connect("192.168.226.1", 9999);
-            
         }
 
         public void GetCurrentWorks()

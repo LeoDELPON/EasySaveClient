@@ -14,8 +14,6 @@ namespace EasySaveClient.Factory
             DTODataServer dataServer = new DTODataServer();
             dataServer.Date = propertiesServer[WorkProperties.Date].ToString();
             dataServer.Name = propertiesServer[WorkProperties.Name].ToString();
-            dataServer.Source = propertiesServer[WorkProperties.Source].ToString();
-            dataServer.Target = propertiesServer[WorkProperties.Target].ToString();
             dataServer.Size = propertiesServer[WorkProperties.Size].ToString();
             dataServer.Duration = propertiesServer[WorkProperties.Duration].ToString();
             dataServer.EncryptDuration = propertiesServer[WorkProperties.EncryptDuration].ToString();

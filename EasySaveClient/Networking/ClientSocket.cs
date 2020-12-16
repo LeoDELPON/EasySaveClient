@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 
 namespace EasySaveClient.Networking
 {
@@ -12,7 +13,7 @@ namespace EasySaveClient.Networking
         private Socket _socket;
         private byte[] _buffer;
         private PacketHandler ph;
-
+        public List<Thread> threadDataList;
         public ClientSocket()
         {
             Console.WriteLine("[+] Initializing the socket");
@@ -21,7 +22,7 @@ namespace EasySaveClient.Networking
                 SocketType.Stream,
                 ProtocolType.Tcp
                 );
-
+            threadDataList = new List<Thread>();
             ph = PacketHandler.Instance;
         }
 
@@ -58,13 +59,16 @@ namespace EasySaveClient.Networking
             Socket clientSocket = (Socket)resultConnection.AsyncState;
             try
             {
-                int bufferLength = _socket.EndReceive(resultConnection);
-                byte[] packet = new byte[bufferLength];
-                Buffer.BlockCopy(_buffer, 0, packet, 0, packet.Length);
+                Thread threadDataElement = new Thread(new ThreadStart( () => {
+                    int bufferLength = _socket.EndReceive(resultConnection);
+                    byte[] packet = new byte[bufferLength];
+                    Buffer.BlockCopy(_buffer, 0, packet, 0, packet.Length);
+                    ph.Handle(packet,
+                        clientSocket);
+                }));
+                threadDataList.Add(threadDataElement);
+                threadDataElement.Start();
 
-
-                ph.Handle(packet,
-                          clientSocket);
             }
             catch (SocketException e)
             {
