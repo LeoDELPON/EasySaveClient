@@ -10,15 +10,33 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  >
             <StackPanel Orientation="Horizontal" Background="Red" Margin="0"   >
 
-                <Label Content="Nom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workNameLbl" Width="62" FontFamily="Segoe UI Semilight" Foreground="White"/>
+                <Label Content="Nom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workNameLbl" Width="63" FontFamily="Segoe UI Semilight" Foreground="White"/>
 
                 <Label Content="Type" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name ="workTypeLbl" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
                 <Label Content="Date" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workDate" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
                 <Label Content="Size" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
                 <Label Content="Temps" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workDuration" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
-                <Label Content="EnryptDuration" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEncryptDuration" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
-                <Label Content="EligibleFile" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEligibleSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
-                <Label Content="RemainingSize" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workRemainingSize" Width="65" FontFamily="Segoe UI Semilight" Foreground="White"/>
+                <Label Content="EnryptDuration" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEncryptDuration" Width="91" FontFamily="Segoe UI Semilight" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.351"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-0.199"/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="EligibleFile" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workEligibleSize" Width="85" FontFamily="Segoe UI Semilight" Foreground="White"/>
+                <Label Content="RemainingSize" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name ="workRemainingSize" Width="105" FontFamily="Segoe UI Semilight" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.293"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
             </StackPanel>
 
 

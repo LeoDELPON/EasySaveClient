@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kylian\\source\\repos\\ESCLEO\\EasySaveClient\\EasySaveClient.csproj": {}
+    "C:\\Users\\delpo\\Documents\\Projets\\C#\\EasySaveClient\\EasySaveClient\\EasySaveClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kylian\\source\\repos\\ESCLEO\\EasySaveClient\\EasySaveClient.csproj": {
+    "C:\\Users\\delpo\\Documents\\Projets\\C#\\EasySaveClient\\EasySaveClient\\EasySaveClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kylian\\source\\repos\\ESCLEO\\EasySaveClient\\EasySaveClient.csproj",
+        "projectUniqueName": "C:\\Users\\delpo\\Documents\\Projets\\C#\\EasySaveClient\\EasySaveClient\\EasySaveClient.csproj",
         "projectName": "EasySaveClient",
-        "projectPath": "C:\\Users\\Kylian\\source\\repos\\ESCLEO\\EasySaveClient\\EasySaveClient.csproj",
-        "packagesPath": "C:\\Users\\Kylian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kylian\\source\\repos\\ESCLEO\\EasySaveClient\\obj\\",
+        "projectPath": "C:\\Users\\delpo\\Documents\\Projets\\C#\\EasySaveClient\\EasySaveClient\\EasySaveClient.csproj",
+        "packagesPath": "C:\\Users\\delpo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\delpo\\Documents\\Projets\\C#\\EasySaveClient\\EasySaveClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Kylian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\delpo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -61,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

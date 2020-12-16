@@ -31,7 +31,7 @@ namespace EasySaveClient
             workEncryptDuration.Content = workItem.EncryptDuration;
             workRemainingSize.Content = workItem.RemainingSize;
             workSize.Content = workItem.Size;
-            workTypeLbl.Content = workItem.TypeSave:
+            workTypeLbl.Content = workItem.TypeSave;
 
 
         }
