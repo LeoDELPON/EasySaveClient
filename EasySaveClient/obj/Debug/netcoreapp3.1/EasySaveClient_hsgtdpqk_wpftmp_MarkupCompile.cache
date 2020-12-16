@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\delpo\Documents\Projets\C#\EasySaveClient\EasySaveClient\obj\Debug\netcoreapp3.1\
+C:\Users\Kylian\source\repos\ESCLEO\EasySaveClient\obj\Debug\netcoreapp3.1\
 EasySaveClient_hsgtdpqk_wpftmp
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\delpo\Documents\Projets\C#\EasySaveClient\EasySaveClient\App.xaml
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+C:\Users\Kylian\source\repos\ESCLEO\EasySaveClient\App.xaml
 2-483001951
 
 17-530177685
-386-392162529
+386-2110481562
 MainWindow.xaml;WrkElement.xaml;
 
 True
